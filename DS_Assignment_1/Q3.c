@@ -14,7 +14,7 @@ int largest_num (int ar[],int ar_length){
     
 
 void main(){
-    int ar[10] ={1,2,13,4,5,6,7,8,9,10};
+    int ar[5] ={1,2,13,4,5};
     int ar_length = sizeof(ar)/sizeof(ar[0]);
     int max = largest_num(ar,ar_length);
     printf("MAX : %d\n",max);

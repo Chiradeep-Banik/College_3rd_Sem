@@ -13,7 +13,7 @@ int num_of_occerence(int ar[],int ar_length,int NUM){
 }
 
 void main(){
-    int ar[16] = {1,2,3,4,5,6,7,8,9,10,1,4,6,2,13,2};
+    int ar[6] ={1,1,3,13,4,12};
     int NUM;
     printf("Enter the number to search for: ");
     scanf("%d",&NUM);

@@ -21,8 +21,8 @@ void main(){
     int* rev = reverse_ar(ar,ar_length,REV);
     printf("After : ");
 
-    for (int i = 0; i < ar_length; i++){
-        printf("%d ",rev[i]);
+    for (int j = 0; j < ar_length; j++){
+        printf("%d ",rev[j]);
     }
     printf("\n");
 }
