@@ -2,15 +2,16 @@
 
 #include <stdio.h>
 
-void main(){
-    int ar[4][4];
+void make_matrix(int* ptr){
     for(int i = 0 ; i < 4 ; i++){
         printf("Enter the values of %dth row : ",i+1);
         for(int j = 0 ; j < 4 ; j++){
-            scanf("%d",&ar[i][j]);
+            scanf("%d",(ptr+i*4+j));
         }
     }
-    int* ptr = &ar[0][0];
+}
+
+void display_matrix(int* ptr){
     printf("The elements of the matrix are :");
     for(int i = 0 ; i < 16 ; i++){
         if(i%4 == 0){
@@ -20,4 +21,11 @@ void main(){
     }
     printf("\n");
 
+}
+
+void main(){
+    int ar[4][4];
+    int* ptr = &ar[0][0];
+    make_matrix(ptr);
+    display_matrix(ptr);
 }
