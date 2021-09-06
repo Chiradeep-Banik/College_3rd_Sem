@@ -19,21 +19,19 @@ struct student{
 };
 
 struct student_list{
-    struct student s1;
-    struct student s2;
-    struct student s3;
+    struct student s1,s2,s3;
 };
 
 void take_input(struct student_list *sl){
     printf("Enter the enrollment numbers: ");
     scanf("%d%d%d", &(sl->s1.enrollmentNo), &(sl->s2.enrollmentNo), &(sl->s3.enrollmentNo));
-    printf("Enter the registration number: ");
+    printf("Enter the registration numbers: ");
     scanf("%d%d%d", &(sl->s1.regNo), &(sl->s2.regNo), &(sl->s3.regNo));
-    printf("Enter the name: ");
+    printf("Enter the names: ");
     scanf("%s%s%s", &(sl->s1.studName), &(sl->s2.studName), &(sl->s3.studName));
-    printf("Enter the semester: ");
+    printf("Enter the semesters: ");
     scanf("%d%d%d", &(sl->s1.studSem), &(sl->s2.studSem), &(sl->s3.studSem));
-    printf("Enter the CGPA: ");
+    printf("Enter the CGPAs: ");
     scanf("%f%f%f", &(sl->s1.studCGPA), &(sl->s2.studCGPA), &(sl->s3.studCGPA));
     sl->s1.next = &(sl->s2);
     sl->s2.next = &(sl->s3);
@@ -48,7 +46,7 @@ void display_each(struct student *s){
 }
 void display_all(struct student_list *sl){
     struct student* start = &(sl->s1);
-    while(start->next != NULL){
+    while(start != NULL){
         display_each(start);
         start = start->next;
     }

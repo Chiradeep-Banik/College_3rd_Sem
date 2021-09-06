@@ -13,6 +13,6 @@ void usage(struct student *s){
 }
 
 void main(){
-    struct student s;
-    usage(&s);
+    struct student a;
+    usage(&a);
 }

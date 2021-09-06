@@ -11,7 +11,8 @@
 */
 #include <stdio.h>
 
-struct employee{
+struct employee
+{
     int empId;
     char empName[20];
     float basic;
@@ -20,14 +21,16 @@ struct employee{
     float ta;
     float gross;
 };
-void  emp_calc(struct employee *e){
+void emp_calc(struct employee *e)
+{
     e->da = e->basic * 0.25;
     e->hra = e->basic * 0.15;
     e->ta = e->basic * 0.10;
     e->gross = e->basic + e->da + e->hra + e->ta;
 }
-void take_input(struct employee *e){
-    printf("Enter the details of the employee\n");
+void take_input(struct employee *e)
+{
+    printf("Taking the employee details\n");
     printf("Enter the empId : ");
     scanf("%d", &(e->empId));
     printf("Enter the empName : ");
@@ -36,17 +39,19 @@ void take_input(struct employee *e){
     scanf("%f", &(e->basic));
 }
 
-void display(struct employee *e){
-    printf("\nEmployee Id: %d",e->empId);
-    printf("\nEmployee Name: %s",e->empName);
-    printf("\nBasic: %.2f",e->basic);
-    printf("\nDA: %.2f",e->da);
-    printf("\nHRA: %.2f",e->hra);
-    printf("\nTA: %.2f",e->ta);
-    printf("\nGross: %.2f\n",e->gross);
+void display(struct employee *e)
+{
+    printf("\nEmployee Id: %d", e->empId);
+    printf("\nEmployee Name: %s", e->empName);
+    printf("\nBasic: %.2f", e->basic);
+    printf("\nDA: %.2f", e->da);
+    printf("\nHRA: %.2f", e->hra);
+    printf("\nTA: %.2f", e->ta);
+    printf("\nGross: %.2f\n", e->gross);
 }
 
-void main(){
+void main()
+{
     struct employee e1;
     take_input(&e1);
     emp_calc(&e1);
