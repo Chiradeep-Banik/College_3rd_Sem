@@ -2,10 +2,18 @@
 
 #include<stdio.h>
 
-int global_variable = 10;
+int global_var=10;
+
+void print_global(int local_var){
+
+    printf("Global variable is %d\n",global_var);
+    printf("Local variable is %d\n",local_var); 
+    // Can only be excessed if we pas the value as argument but global_var is not passed as argument
+}
 
 void main(){
-    int local_variable = 20;
-    printf("Global variable: %d\n", global_variable);
-    printf("Local variable: %d\n", local_variable);
+
+    int local_var=20;
+    
+    print_global(local_var);
 }
