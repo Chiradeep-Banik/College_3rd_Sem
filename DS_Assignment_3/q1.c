@@ -8,5 +8,4 @@ void main(){
     int local_variable = 20;
     printf("Global variable: %d\n", global_variable);
     printf("Local variable: %d\n", local_variable);
-    
 }
