@@ -10,10 +10,10 @@
 
 void main(){
     int *ptr = (int *)malloc(sizeof(int)); // Do not set any default values inside the pointer
-    printf("%d\n", *ptr); 
+    printf("Malloc -- %d\n", *ptr); 
 
     ptr = (int *)calloc(1, sizeof(int)); // Set the value of the pointer to 0
-    printf("%d\n", *ptr);
+    printf("Calloc -- %d\n", *ptr);
     
     free(ptr); // Free the memory allocated to the pointer
 }
