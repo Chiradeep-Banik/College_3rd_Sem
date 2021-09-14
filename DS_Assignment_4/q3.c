@@ -11,12 +11,12 @@ void main(){
     scanf("%d", &N);
     int *arr = (int *)calloc(N ,sizeof(int));
     for(int i = 0 ; i < N ; i++){
-        printf("Enter the value for arr[%d] : ", i);
+        printf("Enter the value at arr[%d] : ", i);
         scanf("%d", (arr+i));
     }
     int sum = 0;
     for(int i = 0 ; i < N ; i++){
-        printf("Memory location of arr[%d] -- %p\n", i, (arr+i));
+        printf("Memory location of arr[%d] -- %x\n", i, (arr+i));
         int c = 0;
         for (int j = 1; j <= *(arr+i); j++){
             if(*(arr+i)%j == 0){

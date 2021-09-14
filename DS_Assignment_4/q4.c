@@ -5,7 +5,7 @@
 
 void take_input(int *ptr,int n){
     for (int i = 0; i < n; i++){
-        printf("Enter the value at %d location: ",i);
+        printf("Enter the value at %d : ",i);
         scanf("%d",(ptr+i));
     }
 }
@@ -16,7 +16,7 @@ void show_input(int* ptr , int n){
 }
 void main(){
     int N;
-    printf("Enter the size of the memory to be allocated: ");
+    printf("Enter the unit size of the memory to be allocated: ");
     scanf("%d",&N);
     int *ptr = (int *)malloc(N*sizeof(int)); 
     take_input(ptr,N);
