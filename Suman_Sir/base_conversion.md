@@ -8,7 +8,7 @@
 - Then I converted the decimal to the target base using the <strong>to_Base()</strong> function.
 
 #### MY CODE : 
-
+```c
     #include <stdio.h>
     #include <stdlib.h>
 
@@ -150,3 +150,4 @@
 
         return 0;
     }
+```
