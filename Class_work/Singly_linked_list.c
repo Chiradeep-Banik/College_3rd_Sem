@@ -74,6 +74,52 @@ struct node* unshift(struct linked_list *list){
     return temp;
 }
 
+int find(struct linked_list *list,int value){
+    if(list->length == 0){
+        printf("list is empty\n");
+        return -1;
+    }else{
+        struct node* temp = list->head;
+        while(temp != NULL){
+            if(temp->value == value){
+                printf("Found!!\n");
+                return 1;
+            }
+            temp = temp->next;
+        }
+    }
+    return -1;
+}
+
+struct linked_list* concat (struct linked_list *list1,struct linked_list *list2){
+    int total_length = list1->length + list2->length;
+    struct linked_list *new_list = (struct linked_list *)malloc(sizeof(struct linked_list));
+    new_list->length = total_length;
+    if(list1->length == 0){
+        new_list->head = list2->head;
+        new_list->tail = list2->tail;
+    }else if(list2->length == 0){
+        new_list->head = list1->head;
+        new_list->tail = list1->tail;
+    }else if(list1->length == 0 && list2->length == 0){
+        new_list->head = NULL;
+        new_list->tail = NULL;
+    }else{
+        new_list->head = list1->head;
+        list1->tail->next = list2->head;
+        new_list->tail = list2->tail;
+    }
+    return new_list;
+}
+
+struct linked_list* create_list(){
+    struct linked_list *list = (struct linked_list *)malloc(sizeof(struct linked_list));
+    list->length = 0;
+    list->head = NULL;
+    list->tail = NULL;
+    return list;
+}
+
 void print_list(struct linked_list *list){
     struct node *current = list->head;
     for(;current != NULL; current = current->next){
@@ -83,17 +129,19 @@ void print_list(struct linked_list *list){
 }
 
 void main(){
-    struct linked_list *list = (struct linked_list *)malloc(sizeof(struct linked_list));
-
+    struct linked_list *list = create_list();
+    struct linked_list *list2 = create_list();
     push(list, 1);
     push(list, 2);
     push(list, 3);
-    struct node *a = unshift(list);
-    struct node *b = pop(list);
     pop(list);
     unshift (list);
     shift(list, 4);
-    printf("%d\n", a->value);
-    printf("%d\n", b->value);
+    push(list, 5);
+    push(list, 6);
+    push(list2, 7);
+    push(list2, 8);
     print_list(list);
+    print_list(list2);
+    print_list(concat(list, list2));
 }
