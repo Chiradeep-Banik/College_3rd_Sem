@@ -5,49 +5,46 @@
 #include <limits.h>
 
 struct stack {
-    int top;
-    unsigned int capacity;
     int* array;
+    unsigned int capacity;
+    int top;
 };
 
 typedef struct stack Stack;
 
-Stack* createStack(unsigned int capacity){
-    Stack* stack = (Stack*)malloc(sizeof(Stack));
-    stack->capacity = capacity;
-    stack->top = -1;
-    stack->array = (int*)malloc(capacity * sizeof(int));
-    return stack;
+Stack* create_stack (unsigned int capacity) {
+    Stack* s = (Stack*) malloc (sizeof(Stack));
+    s->array = (int*) malloc(capacity * sizeof(int));
+    s->capacity = capacity;
+    s->top = 0;
+    return s;
 }
 
-int isFull(Stack* stack){
-    return stack->top == stack->capacity - 1;
-}
- 
-int isEmpty(Stack* stack){
-    return stack->top == -1;
-}
- 
-void push(Stack* stack, int item){
-    if (isFull(stack))
+void push(Stack* s, int data){
+    if(s->top == s->capacity){
+        printf("Stack Overflow\n");
         return;
-    stack->top++;
-    stack->array[stack->top] = item;
-    printf("%d pushed to stack\n", item);
+    }
+    s->array[s->top] = data;
+    s->top++;
+    printf("%d pushed to stack\n",data);
 }
-int pop(Stack* stack){
-    if (isEmpty(stack)){
-        printf("Stack is empty\n");
+
+int pop(Stack* s){
+    if(s->top == 0){
+        printf("Stack Underflow\n");
         return INT_MIN;
     }
-    stack->top--;
-    return stack->array[stack->top];
+    s->top--;
+    int temp = s->array[s->top];
+    printf("%d popped from stack\n",temp);
+    return temp;
 }
 
-void main(){
-    Stack *st = createStack(10);
-    push(st, 10);
-    push(st, 20);
-    push(st, 30);
-    printf("%d popped from stack\n", pop(st));
+void main(){ 
+    Stack* s = create_stack(5);
+    push(s,10);
+    push(s,30);
+    pop(s);
+    pop(s);
 }
