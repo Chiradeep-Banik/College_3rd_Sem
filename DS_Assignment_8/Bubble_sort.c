@@ -26,9 +26,10 @@ int* bubble_sort(int* ar,int len){
 }
 
 void main(){
-    int arr[5] = {3,44,38,5,44};
-    int* sorted_ar = bubble_sort(arr,5);
-    for (int i = 0; i < 5; i++){
+    int arr[] = {3,44,38,5,44};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    int* sorted_ar = bubble_sort(arr,len);
+    for (int i = 0; i < len; i++){
         printf("%d\n", sorted_ar[i]);
     }
 }

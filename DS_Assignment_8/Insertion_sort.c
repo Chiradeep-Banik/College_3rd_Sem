@@ -10,14 +10,23 @@ void swap(int* num1, int* num2){
 }
 
 int* insertion_sort(int* ar,int len){
-
+    for (int  i = 1; i < len; i++){
+        int key = ar[i];
+        for (int j = 0; j <= i; j++){
+            if(ar[j]>ar[i]){
+                swap(&ar[i],&ar[j]);
+            }
+        }
+    }
+    
     return ar;
 }
 
 void main(){
-    int arr[5] = {3,44,38,5,44};
-    int* sorted_ar = insertion_sort(arr,5);
-    for (int i = 0; i < 5; i++){
+    int arr[] = {3,44,38,5,44};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    int* sorted_ar = insertion_sort(arr,len);
+    for (int i = 0; i < len; i++){
         printf("%d\n", sorted_ar[i]);
     }
 }
