@@ -42,9 +42,11 @@ int pop(Stack* s){
 }
 
 void main(){ 
-    Stack* s = create_stack(5);
+    Stack* s = create_stack(2);
     push(s,10);
+    push(s,20);
     push(s,30);
+    pop(s);
     pop(s);
     pop(s);
 }

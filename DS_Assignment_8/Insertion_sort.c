@@ -1,7 +1,6 @@
 //Implementation of Insertion sort
 
 #include <stdio.h>
-#include <stdlib.h>
 
 void swap(int* num1, int* num2){
     int temp = *num1;
@@ -27,6 +26,7 @@ void main(){
     int len = sizeof(arr)/sizeof(arr[0]);
     int* sorted_ar = insertion_sort(arr,len);
     for (int i = 0; i < len; i++){
-        printf("%d\n", sorted_ar[i]);
+        printf(" %d", sorted_ar[i]);
     }
+    printf("\n");
 }

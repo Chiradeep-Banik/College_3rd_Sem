@@ -48,10 +48,8 @@ void main(){
     Queue* q = create_queue(2);
     enqueue(q, 10);
     enqueue(q, 20);
-    dequeue(q);
-    dequeue(q);
-    dequeue(q);
     enqueue(q, 30);
+    dequeue(q);
     dequeue(q);
     dequeue(q);
 }
