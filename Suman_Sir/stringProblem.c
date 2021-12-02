@@ -32,10 +32,10 @@ void main()
     while (strstr(sentence1, sentence2) != NULL)
     {
         int pos = strstr(sentence1, sentence2) - sentence1;
-        printf("Position %d\n", pos + 1);
+        printf("Position %d\n", pos );
         for (int j = 0; j < strlen(sentence2); j++)
         {
-            sentence1[pos + j] = '*';
+            sentence1[pos + j] = "  ";
         }
     }
 }
